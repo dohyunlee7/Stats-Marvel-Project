@@ -1,0 +1,39 @@
+---
+title: "FinalProject"
+output: html_document
+---
+
+```{r, include=FALSE, message = FALSE}
+###########################
+# DEFAULT SETTINGS
+###########################
+
+knitr::opts_chunk$set(message = FALSE) # include this if you don't want markdown to knit messages
+knitr::opts_chunk$set(warning = FALSE) # include this if you don't want markdown to knit warnings
+knitr::opts_chunk$set(echo=TRUE) # set echo=FALSE to hide code from html output
+options(digits = 4)
+###########################
+# LIBRARIES
+###########################
+
+library(gridExtra)
+library(tidyverse)
+```
+
+```{r}
+MovieData = read_csv("MovieData - MovieData (3).csv")
+MovieData
+```
+```{r}
+SuperHero_MovieData <- filter(MovieData, creative_type == "Super Hero")
+SuperHero_MovieData
+```
+```{r}
+Action_MovieData <- filter(MovieData, genre == "Action")
+Action_MovieData
+```
+
+```{r}
+Marvel_SuperHero_MovieData <- filter(MovieData, marvel == "Yes") 
+Marvel_SuperHero_MovieData
+```
